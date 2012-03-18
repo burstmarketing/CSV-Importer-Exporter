@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+  <testsuites>
+    <testsuite name="persistentDataObjectTest">
+      <file>unit_tests/persistentDataObjectTest.php</file>
+    </testsuite>
+    <testsuite name="csvImporterExporterTest">
+        <file>unit_tests/csvImporterExporterTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>
