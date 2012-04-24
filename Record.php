@@ -1,19 +1,16 @@
 <?php
 
-abstract class persistentDataObject implements ArrayAccess, Iterator, Countable {
+class Record implements ArrayAccess, Iterator, Countable {
 
-      protected $_data;
-
-      public function import($obj) {
-         $this->_data = $obj->_data;
-         
-         return $this;
-      }
-
-      abstract public function load();
-
-      abstract public function save();
-
+    protected $_data = array();
+      
+    public function __construct(){
+        $_args = func_get_args(); 
+	
+	if( count($_args) && is_array($_args[0]) ){
+	    $this->_data = $_args[0];
+	}
+    }
 
 // ArrayAccess, Iterator, Coutable stuff
 
@@ -63,3 +60,6 @@ abstract class persistentDataObject implements ArrayAccess, Iterator, Countable 
 
 
 }
+
+
+?>
